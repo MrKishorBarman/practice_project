@@ -10,7 +10,7 @@ function App() {
       {!selectedComponent &&
         <>
         <h2>Welcome 🙏</h2>
-        <h2>Let me make you day today 😉</h2>
+        <h2>Let me make your day today 😉</h2>
           <h3>
             Wanna proceed with Quotes
             <button onClick={() => setSelectedComponent("Quote")} style={{marginLeft: 10}}>Get Quotes</button>
