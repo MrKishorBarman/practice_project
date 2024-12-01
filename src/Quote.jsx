@@ -5,11 +5,10 @@ const Quote = () => {
 
     let fetchQuote = async() => {
         try {
-            let response = await fetch("https://zenquotes.io/api/random")
+            let response = await fetch("https://quotes-api-self.vercel.app/quote")
             let data = await response.json()
-            console.log(data)
-          if (data && data[0]) {
-            setQuote(`"${data[0].q}" - ${data[0].a}`)
+          if (data) {
+            setQuote(`"${data.quote}" \n- ${data.author}`)
           } else {
             setQuote('No quote found, try again!')
           }
@@ -28,7 +27,7 @@ const Quote = () => {
   return (
     <div>
       <h2>Let me make you super pumped with quotes buddy 😉</h2>
-      <p>{quote}</p>
+      <p style={{whiteSpace: "pre-line"}}>{quote}</p>
       <button onClick = {utter} style={{marginRight: 10}}>Utter</button>
       <button onClick={fetchQuote}>Click</button>
     </div>
